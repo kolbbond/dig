@@ -10,18 +10,20 @@ The library is named dig (DearImGUI)
 clone the two dependencies into directory
 
 `git clone git@github.com:ocornut/imgui.git`  
-`git clone git@github.com:epezent/implot.git'
+`git clone git@github.com:epezent/implot.git`
 
 Then build in traditional cmake fashion
-` mkdir build; cd build; cmake ..; `
-` make -jN; make install; `
+` mkdir build; cd build; cmake ..; `  
+` make -jN; `
+` make test; `
+` make install; `
 
-The header file should be installed 
-You should be example to link against ` dig::dig `
-and include 
+The header file ` dig ` should be installed 
+so you can which should include everything.
 ` #include "dig/dig" `
 
-Which should include everything.
+link against ` dig::dig `
+
 This just lets you use the regular ImGui calls.
 
 
