@@ -1,5 +1,5 @@
-#ifndef guild_hh_
-#define guild_hh_
+#ifndef dig_hh_
+#define dig_hh_
 
 // general include all headers from imgui and implot
 #include "imgui.h"

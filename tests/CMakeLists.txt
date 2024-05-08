@@ -10,8 +10,7 @@ set(test_list
 foreach(srcfile ${test_list})
   string(REPLACE ".cpp" "" name ${srcfile})
   add_executable(${name} ${srcfile})
-  #target_link_libraries(${name} guild ${SDL_LIB})
-  target_link_libraries(${name} guild)
+  target_link_libraries(${name} dig)
 
   add_test(${name} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${name})
 endforeach()

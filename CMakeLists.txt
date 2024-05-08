@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(
-  guild
+  dig
   VERSION 0.1
   LANGUAGES C CXX)
 
@@ -129,21 +129,21 @@ if(CREATE_INSTALL)
     # how can we install on windows? ...  @hey
   include(GNUInstallDirs)
 
-  set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/guild)
+  set(INSTALL_CONFIGDIR ${CMAKE_INSTALL_LIBDIR}/cmake/dig)
 
   install(
-    TARGETS guild
-    EXPORT guild-targets
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/guild
-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/guild
+    TARGETS dig
+    EXPORT dig-targets
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/dig
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/dig
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
   # change export name?
-  set_target_properties(guild PROPERTIES EXPORT_NAME guild)
+  set_target_properties(dig PROPERTIES EXPORT_NAME dig)
 
   # install header files
-  install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/guild)
+  install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dig)
   install(FILES 
      imgui/imgui.h 
      imgui/imconfig.h
@@ -156,34 +156,34 @@ if(CREATE_INSTALL)
      implot/implot.h
      implot/implot_internal.h
 
-     #DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/guild/include)
-     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/guild)
+     #DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dig/include)
+     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dig)
 
   # version
   install(FILES ${CMAKE_BINARY_DIR}/include/version.hh
-          DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/guild)
+          DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/dig)
 
-    set(_INCLUDE_INSTALL_DIR guild)
+    set(_INCLUDE_INSTALL_DIR dig)
 
   # Export targets to a script
   install(
-    EXPORT guild-targets
-    FILE guildTargets.cmake
-    NAMESPACE guild::
+    EXPORT dig-targets
+    FILE digTargets.cmake
+    NAMESPACE dig::
     DESTINATION ${INSTALL_CONFIGDIR}
     )
 
   # create a configversion.cmake
   include(CMakePackageConfigHelpers)
   write_basic_package_version_file(
-      ${CMAKE_CURRENT_BINARY_DIR}/guildConfigVersion.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/digConfigVersion.cmake
       VERSION ${PROJECT_VERSION}
       COMPATIBILITY AnyNewerVersion
   )
 
   configure_package_config_file(
-      ${CMAKE_CURRENT_LIST_DIR}/cmake/guildConfig.cmake.in
-      ${CMAKE_CURRENT_BINARY_DIR}/guildConfig.cmake
+      ${CMAKE_CURRENT_LIST_DIR}/cmake/digConfig.cmake.in
+      ${CMAKE_CURRENT_BINARY_DIR}/digConfig.cmake
       INSTALL_DESTINATION ${INSTALL_CONFIGDIR}
       PATH_VARS CMAKE_INSTALL_INCLUDEDIR CMAKE_INSTALL_LIBDIR
   )
@@ -192,15 +192,15 @@ if(CREATE_INSTALL)
   # install config, configversion and custom find modules
   # (to find with cmake in other projects)
   install (FILES
-      ${CMAKE_CURRENT_BINARY_DIR}/guildConfig.cmake
-      ${CMAKE_CURRENT_BINARY_DIR}/guildConfigVersion.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/digConfig.cmake
+      ${CMAKE_CURRENT_BINARY_DIR}/digConfigVersion.cmake
       DESTINATION ${INSTALL_CONFIGDIR}
       )
 
   ################################################## 
   # EXPORT finally
-  export(EXPORT guild-targets
-      FILE ${CMAKE_CURRENT_BINARY_DIR}/guildTargets.cmake
+  export(EXPORT dig-targets
+      FILE ${CMAKE_CURRENT_BINARY_DIR}/digTargets.cmake
       )
 
   # setup install paths
