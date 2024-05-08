@@ -8,7 +8,7 @@ The library is named dig (DearImGUI)
 
 ## Instructions
 
-clone the two dependencies into directory
+clone the two dependencies into directory  
 
 `git clone git@github.com:ocornut/imgui.git`  
 `git clone git@github.com:epezent/implot.git`
