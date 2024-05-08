@@ -20,7 +20,7 @@ Then build in traditional cmake fashion
 ` make install; `
 
 The header file ` dig ` should be installed 
-so you can which should include everything.
+so you can include everything.
 ` #include "dig/dig" `
 
 link against ` dig::dig `
