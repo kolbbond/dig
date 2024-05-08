@@ -13,7 +13,7 @@ clone the two dependencies into directory
 `git clone git@github.com:ocornut/imgui.git`  
 `git clone git@github.com:epezent/implot.git`
 
-Then build in traditional cmake fashion
+Then build in traditional cmake fashion  
 ` mkdir build; cd build; cmake ..; `  
 ` make -jN; `
 ` make test; `
