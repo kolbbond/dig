@@ -1,8 +1,8 @@
-get_filename_component(guild_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component(dig_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 include(CMakeFindDependencyMacro)
 
 # add path
-list(APPEND CMAKE_MODULE_PATH ${guild_CMAKE_DIR})
+list(APPEND CMAKE_MODULE_PATH ${dig_CMAKE_DIR})
 list(REMOVE_AT CMAKE_MODULE_PATH -1)
 
 # dependencies are SDL and OpenGL
@@ -21,10 +21,10 @@ find_dependency(OpenGL)
 endif()
 
 
-# if we are not guild include guild!
-if(NOT TARGET guild)
-    message(STATUS "guild is not target")
+# if we are not dig include dig!
+if(NOT TARGET dig)
+    message(STATUS "dig is not target")
     # include definitions
-    include("${guild_CMAKE_DIR}/guildTargets.cmake")
+    include("${dig_CMAKE_DIR}/digTargets.cmake")
 endif()
-set(guild_LIBRARIES guild)
+set(dig_LIBRARIES dig)
