@@ -1,7 +1,8 @@
 # Encapsulated build of gui parts
 
 Build system for DearImGui (with implot)
-and SDL2 and OpenGL as an standalone example.
+with SDL2 and OpenGL 
+intended as a standalone example.
 
 The library is named dig (DearImGUI)
 
